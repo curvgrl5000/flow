@@ -1,0 +1,325 @@
+// Use Compass ('cause it rocks!)
+@import "compass";
+
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * COLOR PALETTE
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+/*!
+ * Color Variations and opacity mixins
+*/
+  $cool-grey: #606A76;
+  $grey: #757C82;
+  $dark-grey: #2f3337;
+  $charcoal: #6F6C6A; 
+  $almost-black: #202328;
+  $tan: #b89873;                      
+  $copper: #bd6828;            
+  $rust: #9C5349;                                              
+  $off-white: #e1dfdc;
+  $aqua:#759791;
+  $aqua-matte: #9ab9b4;
+  $olive: #98bb3a;
+  $plum: #6F6C86;
+  $matte-yellow: #CCCF8B;
+  $crimson: #AE5682;
+
+   /*
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   * TYPOGRAPHY
+   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  */
+
+    // Font weights
+    $light: 100;
+    $regular: 400;
+    $bold: 600;
+
+    // Base Font
+    $base-font-family: sans-serif;
+    $base-font-weight: $regular;
+    $base-font-size: 13px;
+    $base-line-height: 1.4;
+
+    // Fixed Font
+    $fixed-font-family: "Helvetica Neue", Hevetica, Arial, sans-serif;  
+    $fixed-font-size: 85%;
+    $fixed-line-height: $base-line-height;
+
+    // Headings
+    $header-font-weight: $bold;
+
+    // Text Colors
+    $text-color: $charcoal;
+    $loud-color: strengthen($text-color);
+    $quiet-color: soften($text-color, 1.5);
+    $header-color: strengthen($text-color, 0.66);
+
+    // Link Colors
+    $link-color: $copper; 
+    $link-visited-color: $rust;
+    $link-hover-color: $aqua;
+
+
+    h1, #super-list, h2, h3, h4, h5, h6, body, legend, label {
+      text-shadow: 1px 1px 0 #111;
+    }
+
+    p, p.white-bk, p.dark-bk {
+      margin: 0 0 9px;
+      font-family: "museo-sans",sans-serif;
+      line-height: 1.8em; 
+      color:
+        adjust-lightness($charcoal, -5%);
+      text-shadow: none;
+      padding: 0 10px 0 0;
+      font-weight: 500; 
+    }
+
+    p.white-bk {
+      font-size: 1.1em;
+      line-height: 1.8em;
+    }
+
+    p.lime {
+      font-size: 1.1em;
+      line-height: 1.8em;
+      color: white;
+      background-color: $olive;
+      padding: 2px 3px;
+    }
+
+    p.dark-bk {
+      color: adjust-lightness($charcoal, 30%);
+      padding: 0 0 60px 0;                                                                                                                                 
+      margin: 0;
+    }
+
+    p.small {
+      font-size: 14px;
+      line-height: 1.25em;
+      color: $almost-black;
+    }
+
+    .lead {
+      margin-bottom: 18px;
+      font-size: 20px;
+      font-weight: 200;
+      line-height: 27px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      font-weight: bold;
+      color: $charcoal;
+      text-rendering: optimizelegibility;
+      font-family: $base-font-family;
+    }
+
+    h1 small,
+    h2 small,
+    h3 small,
+    h4 small,
+    h5 small,
+    h6 small {
+      font-weight: normal;
+      color: $almost-black;
+    }
+
+    h1 {
+      font-size: 30px;
+      line-height: 36px;
+      font-family: "museo-sans",sans-serif;
+      color: $grey;
+    }
+
+    h1 small {
+      font-size: 18px;
+    }
+
+    h2, h2 .onWhite {
+      font-size: 20px;
+      line-height: 30px;
+      font-family: "museo-slab",sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      color: $copper;
+    }
+
+    h2.small {
+      font-size: 18px;
+    }
+
+    h2.fancy, h2.fancy .onWhite {
+      font-size: 18px;
+      line-height: 25px;
+      font-style: italic;
+      padding: 5px 0 10px 0;
+      color: $copper;
+    }
+
+    h2.super-fancy, h2.super-fancy .onWhite {
+      font-size: 18px;
+      font-family: "salsbury";
+      padding: 15px 0 0 0;
+      color:$olive;
+      text-shadow: #ccdd77 1px 2px 2px;
+    }
+
+    h3 {
+      line-height: 27px;
+      font-size: 18px;
+    }
+
+    h3.sub, h3.sub .onWhite {
+      font-size: 12px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color:
+        adjust-lightness($charcoal, 5%);
+      padding: 5px 0px;
+      font-weight: 600;
+      font-style: normal;
+      font-family: "museo-sans",sans-serif;
+    }
+
+    h3 small {
+      font-size: 14px;
+    }
+
+    h4, h5, h6 {
+      line-height: 18px;
+    }
+
+    h4 {
+      font-size: 14px;
+    }
+
+    h4 small {
+      font-size: 12px;
+    }
+
+    h5 {
+      font-size: 12px;
+    }
+
+    h6, h6 .onWhite {
+      font-size: 11px;
+      color: $almost-black;
+      text-transform: uppercase;
+    }
+
+    .onWhite {
+      text-shadow: none; //The white reference is when the bkgrnd is white    
+    }
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * MISC. BASICS - TO BE UPDATED
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+    // Layout
+    $body-margin-x: 15%;
+
+    // Base Colors
+    $background-color: $dark-grey;
+    $banner-color: #973b12;
+
+
+    // Border Radius
+    $default-border-radius: 8px;
+    .btn-round { @include border-radius (4px, 4px); }          
+    .barely-round { @include border-radius (3px, 3px); }
+    .simply-round { @include border-radius (6px, 6px); }
+    .medium-round { @include border-radius (8px, 8px); }
+    .large-round { @include border-radius (10px, 10px); }
+    
+    .legend {
+      float:left;
+      width:120px;
+      padding-top: 25%;
+      padding-left: 5%;
+    }
+    
+    #diagram {
+      float: right;
+      width: 475px;
+      height: 445px;
+    }
+    .get {
+      display: none;
+    }
+    
+    .skills {
+    float:left;
+    clear:both;
+    width:100%;
+    }
+
+    .skills ul,
+    .skills li {
+    display:block;
+    list-style:none;
+    margin:0;
+    padding:0;
+    }
+
+    .skills li {
+    float:left;
+    clear:both;
+    padding:0 10px;
+    height:25px;
+    line-height:20px;
+    margin-bottom:1px;
+    font-size:15px;
+    }
+
+    .skills .st {
+    color: #97BE0D;
+    text-transform: capitalize;
+    }
+
+    .skills .first {
+    color: #D84F5F;
+    }
+
+    .skills .second {
+    color: #9AB9B4;
+    }
+
+    .skills .third {
+    color: #759791;
+    }
+
+    .skills .fourth {
+    color: #D7DCDF;
+    }
+    
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * MISC. ICONS
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+    #twitter, #github, #bar, #linkedin, #gear, #doublecircle, #circle_arrow_left, #circle_arrow_right, #box, #star  {
+      float: left;
+      width: 50px;
+      height: 45px;
+      margin-right: -10px;
+      padding: 12px 3px 2px 18px;
+      position: relative;
+    }
+
+
+    @import "modules/all";
+
+    html, body { background: $background-color; }
+    body { @include base-font; }             

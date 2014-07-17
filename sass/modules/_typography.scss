@@ -1,0 +1,9 @@
+// This is applied in _base.scss:
+//     body { @include base-font; }
+
+@mixin base-font {
+  color: $text-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}

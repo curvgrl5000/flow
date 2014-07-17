@@ -1,0 +1,24 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+// Modules and Variables - mixins, functions and variables that are used in the partials
+@import "modules/all";
+
+// Partials - All the goodies get constructed here
+@import "partials/base";
+@import "partials/reset";
+@import "partials/buttons";
+@import "partials/figures";
+@import "partials/layouts";
+
+
+// Vendors and Third Party - The vendors who joined the partay
+@import "vendor/colorpicker";
+@import "vendor/jquery.ui.core";
+
+
+
